@@ -1,5 +1,3 @@
-# ACRL Collections Expenditures Reports
-
 # ACRL Collections Expenditures Reports  (UXPROD-2529)
 
 Table of Contents
@@ -39,7 +37,9 @@ Finally, note that in the ACRL survey, “Operation and Maintenance Expenses” 
 At this time, we are assuming that “Operations and Maintenance Expenses” are not recorded as a material expense in Folio along with salary and wages.
 The annual ACRL Academic Library Trends and Statistics survey asks members to report their total materials expenditures broken into one-time, ongoing, and all other materials/services expenditures.  It also asks, if possible, that members break out: e-book expenditures from within one-time expenditures; and e-book and e-journal expenditures from within ongoing expenditures.
 The current (FY20) ACRL survey requests are described briefly below, and fully at  https://acrl.countingopinions.com/  
- 
+<br>
+<br>
+ **Additional information from 2020 survey:**
   </details>
 
 
@@ -50,3 +50,10 @@ This is a sub paragraph, formatted in heading 3 style
 The second paragraph text
 
 ## Requests not yet adressed <a name="requests"></a>
+<br>
+ACRL Collection expenditures report by location:
+At this time, the location data is only available through the PO lines. Since in many cases the total amount of the PO lines is at $0, using this location data would not return accurate data. A link from the PO lines to Holdings is currently in development, UXPROD-268. An additional report may be created once the issue is resolved and data available.
+<br>
+Payment date:
+The invoice ‘payment date’ is currently in development. This element should be added to the query as soon as it becomes available.
+
