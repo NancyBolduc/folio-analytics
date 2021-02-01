@@ -68,12 +68,33 @@ ACRL requests that expenditures be reported for the most recent 12-month period 
  <p>
  There is JIRA issue created to be able to add custom fields to Purchase Orders and Purchase Order Lines. This could be useful for ACRL reporting in the future.
 https://issues.folio.org/plugins/servlet/mobile#issue/UXPROD-2865
-
   </details>
 
 
 ## Filters <a name="filters"></a>
-This is a sub paragraph, formatted in heading 3 style
+<p>
+Each institution’s reporters will need to know how to best get the needed breakouts for their institution.  The code in this query includes hardcoded filters and parameters filters.
+<details>
+  <summary markdown="span">Click here to read more!</summary>  
+  <br>
+   <h4>Hardcoded filters</h4> 
+ These are assumptions, located in the 'Where" clause.
+ For this query, there is only one harcoded filter: Invoice lines with a status of ‘paid’
+ <p>
+  <h4>Parameter filters</h4> 
+ 
+ * Approval date: Select approval_date_start_date and approval_date_end_date (e.g., 2019-	01-01)
+ * Payment Date (currently in development, should be added to these queries)
+ * Order Type: Select “one-time” or “ongoing,” or leave blank for both
+ * Order Format: Select “Electronic Resource,” “Physical Resource,” “P/E Mix” or leave 	blank for all)
+ * Instance Format: Select e_resources vs physical. (eg. "computer-online resource" for electronic resources or "Physical Resource" for physical resources) 
+ * Instance Mode of Issuance: Select “single unit”, “serial” etc.
+ * Location: Location should be added later when a link will be created between Holdings and PO Lines.
+ 
+  
+  
+   </details>
+ <p> 
 
 ## Output <a name="output"></a>
 The second paragraph text
