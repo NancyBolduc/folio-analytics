@@ -77,11 +77,11 @@ Each institution’s reporters will need to know how to best get the needed brea
 <details>
   <summary markdown="span">Click here to read more!</summary>  
   <br>
-   <h4>Hardcoded filters</h4> 
+   <h4>Hardcoded filters:</h4> 
  These are assumptions, located in the 'Where" clause.
  For this query, there is only one harcoded filter: Invoice lines with a status of ‘paid’
  <p>
-  <h4>Parameter filters</h4> 
+  <h4>Parameter filters:</h4> 
  
  * Approval date: Select approval_date_start_date and approval_date_end_date (e.g., 2019-	01-01)
  * Payment Date (currently in development, should be added to these queries)
@@ -90,14 +90,88 @@ Each institution’s reporters will need to know how to best get the needed brea
  * Instance Format: Select e_resources vs physical. (eg. "computer-online resource" for electronic resources or "Physical Resource" for physical resources) 
  * Instance Mode of Issuance: Select “single unit”, “serial” etc.
  * Location: Location should be added later when a link will be created between Holdings and PO Lines.
- 
-  
-  
    </details>
  <p> 
 
 ## Output <a name="output"></a>
-The second paragraph text
+<ins>ACRL Collection Expenditures A:</ins>
+<br>
+ Aggregation:
+ 
+* Invoice ID
+* Purchase Order Line ID
+* Purchase order number
+* Purchase order type
+* Purchase order line format
+* Instance format name
+* Purchase order line material type physical
+* Purchase order line material type electronic
+* Instance mode of issuance name
+* Invoice Line status
+* Invoice Line ID
+* Invoice approval date
+* Invoice Line adjustments description
+* Invoice adjustments total
+* Invoice Line value
+* Invoice Line total
+* Invoice Line Total including invoice adjustments
+ *Payment Date* not developed yet, will need to add to this query 
+ 
+<p>
+Adjustments at the Invoice level that are "Prorated" are defined at the Invoice Level, but are applied to Invoice Lines. The prorate field specifies how the adjustment should be distributed.
+The Invoice adjustments that are "Not prorated" and "In Addition To" are in addition to the Invoice Lines total. In this case, the Invoice adjustment is added to each Invoice Lines based on its percentage in relation of the Invoice Lines total amount.
+ 
+ <details>
+  <summary markdown="span">Click here to read more!</summary>  
+  <br>
+  
+ <p> 
+<ins>ACRL Collection Expenditures B:</ins>
+ <br>
+ Aggregation:
+ 
+* Invoice ID
+* Purchase Order Line ID
+* Purchase order number
+* Purchase order type
+* Purchase order line format
+* Instance format name
+* Purchase order line material type physical
+* Purchase order line material type electronic
+* Instance mode of issuance name
+* Invoice Line status
+* Invoice Line ID
+* Invoice approval date
+* Invoice Line adjustments description
+* Invoice adjustments total
+ *Payment Date* not developed yet, will need to add to this query  
+ 
+ <ins>ACRL Collection Expenditures C:</ins>
+<br>
+Aggregation:
+ 
+* Invoice ID
+* Invoice adjustment prorate (not prorated)
+* Invoice adjustment relation to totl (In addition to)
+* Invoice adjustment description
+* Invoice adjustments total amount
+* Invoice Line value
+* Invoice Line total
+* Invoice Line Total including invoice adjustments
+ *Payment Date* not developed yet, will need to add to this query 
+ 
+ 
+</details>
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 ## Requests not yet adressed <a name="requests"></a>
 <br>
