@@ -53,6 +53,22 @@ The current (FY20) ACRL survey requests are described briefly below, and fully a
 Note that the ACRL survey is aligned with the NCES Academic Library survey, so these measures can also be used for that survey.
 <p>
 ACRL requests that expenditures be reported for the most recent 12-month period that corresponds to the institution's fiscal year. All expenses should be reported in whole dollars in the most appropriate category to provide an unduplicated count of expenses. 
+ <p>
+ <h4>Relevant LDP/FOLIO documentation:</h4> 
+ 
+ * API reference documentation for all modules located at:  https://dev.folio.org/reference/api/
+ * Schema Spy has visual representation of tables at https://glintcore.net:8443/ldp/schemaspy/public/relationships.html
+ * FOLIO raml parser: https://docs.google.com/spreadsheets/d/1m_Cq_GmZX37gJPEjVWt9eOLXskUjSLUb-8KapWj0SIw/edit#gid=24879874
+ * Inventory Beta - Metadata Elements (being kept up to date by Charlotte): https://docs.google.com/spreadsheets/d/1RCZyXUA5rK47wZqfFPbiRM0xnw8WnMCcmlttT7B3VlI/edit#gid=952741439
+ * LDP table relationships: https://glintcore.net:8443/ldp/schemaspy/public/relationships.html
+ <p>
+ The most current U.S. Association of College & Research Libraries (ACRL) survey documentation is available here: https://acrl.countingopinions.com/  Earlier documentation is available here: https://acrl.countingopinions.com/index.php?page_id=5
+ p
+ <h4>Future: Custom fileds</h4> 
+ <p>
+ There is JIRA issue created to be able to add custom fields to Purchase Orders and Purchase Order Lines. This could be useful for ACRL reporting in the future.
+https://issues.folio.org/plugins/servlet/mobile#issue/UXPROD-2865
+
   </details>
 
 
