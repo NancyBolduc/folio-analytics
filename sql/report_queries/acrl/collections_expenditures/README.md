@@ -119,7 +119,7 @@ Each institution’s reporters will need to know how to best get the needed brea
  
 <p>
 Adjustments at the Invoice level that are "Prorated" are defined at the Invoice Level, but are applied to Invoice Lines. The prorate field specifies how the adjustment should be distributed.
-The Invoice adjustments that are "Not prorated" and "In Addition To" are in addition to the Invoice Lines total. In this case, the Invoice adjustment is added to each Invoice Lines based on its percentage in relation of the Invoice Lines total amount.
+The Invoice adjustments that are "Not prorated" and "In Addition To" are in addition to the Invoice Lines total. In this case, the Invoice adjustment is added to each Invoice Lines based on its ratio in relation of the Invoice Lines total amount.
  
  <details>
   <summary markdown="span">Click here to read more!</summary>  
