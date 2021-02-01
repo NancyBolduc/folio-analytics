@@ -39,7 +39,20 @@ The annual ACRL Academic Library Trends and Statistics survey asks members to re
 The current (FY20) ACRL survey requests are described briefly below, and fully at  https://acrl.countingopinions.com/  
 <br>
 <br>
- **Additional information from 2020 survey:**
+ <h4>Additional information from 2020 survey:</h4>
+ 
+| Material/Services expenses  |  |
+| ------------- | ------------- |
+| One-time purchase of books, serial backfiles, and other materials  | Include: onetime purchases of books, serials, and all other materials (electronic or 			physical, including locally held e-resources), purchased on a one-time basis.<br>Exclude: expenses for computer software used to support library operations or to link to 	external networks and anything purchased on a subscription basis.
+| E-books (20a)<br> (if available)  | Include:  Include expenditures for any e-books purchased on a one-time basis, e-	books 		purchases triggered through a PDA or DDA program. <br>Exclude: Ongoing subscriptions to e-book packages and deposit account as expenditures 	until the library receives access to an e-book   |
+| Ongoing commitments to subscriptions:  | Include: Expenses for ongoing commitments for all formats, including serials and any 	other items committed to annually, including annual electronic platform or access 	fees. Expenditures for standing orders if possible  |
+| E-books (21a)<br> (if available):  | Include: ongoing subscriptions to ebook packages; include annual fees for e-book 	platforms  |
+| E-journals 21b <br> (if available):  | Include: expenses for e-journals purchased in an ongoing basis   | 
+| All other material/services cost  | ACRL is not fully prescriptive about what should be included in the category “all other 	materials/services expenditures”; for the most part, it only indicates what these 	expenditures “may” include.  This is possibly because members may not easily break out 	these costs.  It may also be because some institutions do not consider the expenditures 	ACRL recommends materials expenditures, but other operating expenditures, and, 	following local procedures, institutions may need or want to include them as other 	operating expenditures.  ACRL suggests that “all other materials/services” might 	include, e.g.: document delivery/interlibrary loan services; pay-per-view journal articles 	transactions; fees expended for short-term loans as part of a DDA or PDA 	program.  On 	the other hand, ACRL does specifically indicate that it considers expenditures for 	bibliographic management systems (e.g., EndNote, RefWorks) materials expenditures.  	See the ACRL documentation for more info.  Each institution will need to 	decide what is 	correct for them.  It is suggested data notes are provided if local practices differ. 	Services cost may include MARC records, OCLC and HathiTrust.
+
+Note that the ACRL survey is aligned with the NCES Academic Library survey, so these measures can also be used for that survey.
+<p>
+ACRL requests that expenditures be reported for the most recent 12-month period that corresponds to the institution's fiscal year. All expenses should be reported in whole dollars in the most appropriate category to provide an unduplicated count of expenses. 
   </details>
 
 
