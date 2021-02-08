@@ -5,21 +5,27 @@ Table of Contents
 
   * [Status](#status)
   * [Purpose](#purpose)
+  * [ACRL Collection Expenditures info](#survey)
   * [Filters](#filters)
   * [Output](#output)
   * [Requests not yet adressed](#requests)
 
 
 ## Status <a name="status"></a>
-The ACRL Collection Expenditures comprises three different queries, ACRL Collection Expenditures A, B & C. The different use for each query is defined in this document under ‘Purpose’. As of 01/26/20, these queries are in development. 
+The ACRL Collection Expenditures comprises three different queries -- ACRL Collection Expenditures A, B & C. The different use for each query is described in this document under ‘Purpose’. As of 02/04/2021, these queries are in development. 
 
 ## Purpose <a name="purpose"></a>
-The ACRL Collection Expenditures comprises three different queries, ACRL Collection Expenditures A, B & C. The different use for each query is defined in this document under ‘Purpose’. As of 01/26/20, these queries are in development.   
+These queries are designed to help ACRL member libraries report on expenditures paid through the FOLIO Inventory for ACRL’s annual Academic Library Trends and Statistics Survey. 
+<p>
+These queries are intended to include the most common FOLIO fields used; reporters will likely need to add and remove fields to suit their local needs, and may need to write additional queries.  Where possible, they allow you to type text into “parameter filters” to help get the needed breakouts. Each institution’s reporters need to know how their institution tracks the metadata need to get the requested breakouts.  
 
 <details>
   <summary markdown="span">Click here to read more!</summary>  
   <br>
-  
+<p>
+ Most expenditures tracked in library management systems are for materials or materials-related services.  However, some institutions might report some expenditures tracked in the FOLIO Inventory in ACRL’s “Operations and Maintenance Expenses.”  Likewise, what institutions choose to include in ACRL’s “all other materials/services” may also vary.  So, each reporter will need to know how expenditures are handled at their institution. 
+ <p>
+  In FOLIO, only payments made at the Invoice Line level can be assigned a bibliographic format and order type through their corresponding purchase order lines.  However, FOLIO allows institutions to also make payment adjustments at the Invoice level.  For example, some may pay for shipping costs only at the Invoice level.  This report is broken into three parts to help address these differences.  Part C provides data for invoice adjustments made directly at the Invoice level that are ‘Not prorated’ and are ‘In addition to’ the Invoice Lines total.  Part B provides payments made at the Invoice Line level, excluding any adjustments made directly at the Invoice level that are not prorated.  Part A provides a total of both, prorating any ‘un-prorated’ Invoice adjustment amount and distributing it to each Invoice Line based on the ratio of each Invoice Line amount in relation to the Invoice Lines total amount, per invoice. If an institution wants to break out service costs to be reported in “all other materials/services” or in “operations and maintenance expenses” (e.g., ill costs, shipping of binding), and it tracks those expenses by fund (either at the invoice or the PO line level), the institution will need to build and run a separate query to isolate those costs, and remove them from the appropriate totals.
  <p> 
 <ins>ACRL Collection Expenditures A:</ins>
 
@@ -32,15 +38,11 @@ This query provides a total amount of material expenditures, broken down by invo
 <br>
 <p>
  <ins>ACRL Collection Expenditures C:</ins>
-This query will return only the adjustments added at the invoice level when ‘Not Prorated’ and ‘In addition To’ are selected. The overall total will be calculated by adding all invoice adjustments total amount together. This can be achieved by downloading your results into an Excel sheet or by using any other reporting tools like Tableau. For example, if your institution is using the invoice adjustment to record tax and or shipping cost and you don’t want to add this cost to your POs recorded at the invoice lines level, then the ARCL Collection Expenditures C will give you the total amount spent for these invoice adjustments. The ACRL Collection Expenditure B can be used in conjunction with the ACRL Collection Expenditures C to provide the total amount of material spent but keeping the invoice adjustments separate from the invoice lines total, meaning not added to the overall PO cost.
-Finally, note that in the ACRL survey, “Operation and Maintenance Expenses” section, “Preservation Services” measure includes costs for binding, which some institutions consider materials expenditures. If one want to record Binding in Preservation Cost and this element was recorded in a specific fund and paid through the FOLIO inventory, a separate query will need to be run to get the total amount of binding cost and subtract it from the ACRL Collection Expenditures total amount.
-At this time, we are assuming that “Operations and Maintenance Expenses” are not recorded as a material expense in Folio along with salary and wages.
-The annual ACRL Academic Library Trends and Statistics survey asks members to report their total materials expenditures broken into one-time, ongoing, and all other materials/services expenditures.  It also asks, if possible, that members break out: e-book expenditures from within one-time expenditures; and e-book and e-journal expenditures from within ongoing expenditures.
-The current (FY20) ACRL survey requests are described briefly below, and fully at  https://acrl.countingopinions.com/  
-<br>
-<br>
- <h4>Additional information from 2020 survey:</h4>
- 
+This query will return all adjustments added at the Invoice Level that are and coded as “Not prorated,” and the relation to total is “In addition to”. The needed totals will be calculated by exporting your results to excel or by using any other reporting tools of your choice, like Tableau.  As mentioned earlier, the ACRL Collection Expenditure B can be used in conjunction with the ACRL Collection Expenditures C to provide the total amount of material spent but keeping the invoice adjustments that are ‘Not prorated’ and ‘In addition to’ separate from the Invoice Lines total, meaning not added to the overall PO cost.
+ <br>
+
+ ## ACRL Collection Expenditures survey info <a name="survey"></a>
+ <p>
 | Material/Services expenses  |  |
 | ------------- | ------------- |
 | One-time purchase of books, serial backfiles, and other materials  | Include: onetime purchases of books, serials, and all other materials (electronic or 			physical, including locally held e-resources), purchased on a one-time basis.<br>Exclude: expenses for computer software used to support library operations or to link to 	external networks and anything purchased on a subscription basis.
@@ -54,6 +56,10 @@ Note that the ACRL survey is aligned with the NCES Academic Library survey, so t
 <p>
 ACRL requests that expenditures be reported for the most recent 12-month period that corresponds to the institution's fiscal year. All expenses should be reported in whole dollars in the most appropriate category to provide an unduplicated count of expenses. 
  <p>
+  <details>
+  <summary markdown="span">Click here to read more!</summary>  
+  <br>
+   <p>
  <h4>Relevant LDP/FOLIO documentation:</h4> 
  
  * API reference documentation for all modules located at:  https://dev.folio.org/reference/api/
@@ -63,12 +69,9 @@ ACRL requests that expenditures be reported for the most recent 12-month period 
  * LDP table relationships: https://glintcore.net:8443/ldp/schemaspy/public/relationships.html
  <p>
  The most current U.S. Association of College & Research Libraries (ACRL) survey documentation is available here: https://acrl.countingopinions.com/  Earlier documentation is available here: https://acrl.countingopinions.com/index.php?page_id=5
- p
- <h4>Future: Custom fileds</h4> 
- <p>
- There is JIRA issue created to be able to add custom fields to Purchase Orders and Purchase Order Lines. This could be useful for ACRL reporting in the future.
-https://issues.folio.org/plugins/servlet/mobile#issue/UXPROD-2865
-  </details>
+ </details>
+ <p> 
+   </details>
 
 
 ## Filters <a name="filters"></a>
@@ -90,6 +93,8 @@ Each institution’s reporters will need to know how to best get the needed brea
  * Instance Format: Select e_resources vs physical. (eg. "computer-online resource" for electronic resources or "Physical Resource" for physical resources) 
  * Instance Mode of Issuance: Select “single unit”, “serial” etc.
  * Location: Location should be added later when a link will be created between Holdings and PO Lines.
+ <p>
+ 
    </details>
  <p> 
 
