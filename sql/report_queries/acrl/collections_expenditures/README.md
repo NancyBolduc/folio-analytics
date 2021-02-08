@@ -160,24 +160,20 @@ Aggregation:
 * Invoice Line Total including invoice adjustments
  *Payment Date* not developed yet, will need to add to this query 
  
- 
-</details>
-
-
- 
- 
- 
- 
- 
- 
- 
- 
+ </details>
 
 ## Requests not yet adressed <a name="requests"></a>
-<br>
-ACRL Collection expenditures report by location:
-At this time, the location data is only available through the PO lines. Since in many cases the total amount of the PO lines is at $0, using this location data would not return accurate data. A link from the PO lines to Holdings is currently in development, UXPROD-268. An additional report may be created once the issue is resolved and data available.
-<br>
-Payment date:
-The invoice ‘payment date’ is currently in development. This element should be added to the query as soon as it becomes available.
+<p>
+ <ins>ACRL Collection expenditures report by location:</ins>
+ <br>
+At this time, the location data is only available through the PO lines at the time of its creation and the total amount of the PO lines may very well be $0; therefore using this location data would not return accurate results. A link from the PO lines to Holdings is currently in development, UXPROD-268. An additional report may be created once the issue is resolved and data is available.
+<p>
+ <ins>Payment date:</ins>
+ <br>
+The invoice ‘payment date’ is currently in development. This element should be added to the queries as soon as it becomes available. UXPROD-2169
+<p>
+ <ins>Future Custom Fields:</ins>
+ <br>
+There is JIRA issue created to be able to add custom fields to Purchase Orders and Purchase Order Lines. This could be useful for ACRL reporting in the future.
+https://issues.folio.org/plugins/servlet/mobile#issue/UXPROD-2865
 
