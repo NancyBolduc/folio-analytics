@@ -5,7 +5,7 @@ Table of Contents
 
   * [Status](#status)
   * [Purpose](#purpose)
-  * [ACRL Collection Expenditures info](#survey)
+  * [ACRL Collection Expenditures survey info](#survey)
   * [Filters](#filters)
   * [Output](#output)
   * [Requests not yet adressed](#requests)
