@@ -28,7 +28,6 @@ These queries are intended to include the most common FOLIO fields used; reporte
   In FOLIO, only payments made at the Invoice Line level can be assigned a bibliographic format and order type through their corresponding purchase order lines.  However, FOLIO allows institutions to also make payment adjustments at the Invoice level.  For example, some may pay for shipping costs only at the Invoice level.  This report is broken into three parts to help address these differences.  Part C provides data for invoice adjustments made directly at the Invoice level that are ‘Not prorated’ and are ‘In addition to’ the Invoice Lines total.  Part B provides payments made at the Invoice Line level, excluding any adjustments made directly at the Invoice level that are not prorated.  Part A provides a total of both, prorating any ‘un-prorated’ Invoice adjustment amount and distributing it to each Invoice Line based on the ratio of each Invoice Line amount in relation to the Invoice Lines total amount, per invoice. If an institution wants to break out service costs to be reported in “all other materials/services” or in “operations and maintenance expenses” (e.g., ill costs, shipping of binding), and it tracks those expenses by fund (either at the invoice or the PO line level), the institution will need to build and run a separate query to isolate those costs, and remove them from the appropriate totals.
  <p> 
 <ins>ACRL Collection Expenditures A:</ins>
-
 <p>
 This query reports on all FOLIO inventory expenditures, including un-prorated adjustments made at the Invoice level.  Expenditures are broken down by Invoice Lines. The needed totals will be calculated by exporting your results to Excel or by using any other reporting tools of your choice, like Tableau. Adjustments at the Invoice level that are "Prorated" are applied to Invoice Lines by the system. The prorate field specifies how the adjustment should be distributed.
  <P>
@@ -95,7 +94,6 @@ ACRL requests that expenditures be reported for the most recent 12-month period 
 Each institution’s reporters will need to know how to best get the needed breakouts for their institution.  The code in this query includes hardcoded filters and parameters filters.
 <details>
   <summary markdown="span">Click here to read more!</summary>  
-  <br>
    <h4>Hardcoded filters:</h4> 
  These are assumptions, located in the 'Where" clause.
  For this query, there is only one harcoded filter: Invoice lines with a status of ‘paid’
@@ -137,11 +135,7 @@ Each institution’s reporters will need to know how to best get the needed brea
 * Invoice Line total
 * Invoice Line Total including invoice adjustments
  *Payment Date* not developed yet, will need to add to this query 
- 
-<p>
-Adjustments at the Invoice level that are "Prorated" are defined at the Invoice Level, but are applied to Invoice Lines. The prorate field specifies how the adjustment should be distributed.
-The Invoice adjustments that are "Not prorated" and "In Addition To" are in addition to the Invoice Lines total. In this case, the Invoice adjustment is added to each Invoice Lines based on its ratio in relation of the Invoice Lines total amount.
- 
+<p> 
  <details>
   <summary markdown="span">Click here to read more!</summary>  
   <br>
