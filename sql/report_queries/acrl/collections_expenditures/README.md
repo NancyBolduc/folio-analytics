@@ -185,7 +185,8 @@ At this time, the location data is only available through the PO lines at the ti
 <p>
  <ins>Payment date:</ins>
  <br>
-The invoice ‘payment date’ is currently in development. This element should be added to the queries as soon as it becomes available. UXPROD-2169
+The invoice ‘payment date’ is currently in development. This element should be added to the queries as soon as it becomes available. https://issues.folio.org/plugins/servlet/mobile#issue/UXPROD-2169
+
 <p>
  <ins>Future Custom Fields:</ins>
  <br>
