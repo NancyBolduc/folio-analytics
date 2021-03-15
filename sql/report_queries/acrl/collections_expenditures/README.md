@@ -12,36 +12,40 @@ Table of Contents
 
 
 ## Status <a name="status"></a>
-The ACRL Collection Expenditures comprises three different queries -- ACRL Collection Expenditures A, B & C. The different use for each query is described in this document under ‘Purpose’. As of 02/04/2021, these queries are in development. 
-
+The ACRL Collection Expenditures comprises three different queries -- ACRL Collection Expenditures A, B & C. The different use for each query is described in this document under ‘Purpose’. As of 03/03/2021, these queries are in development. 
+<p>
+ 
 ## Purpose <a name="purpose"></a>
 These queries are designed to help ACRL member libraries report on expenditures paid through the FOLIO Inventory for ACRL’s annual Academic Library Trends and Statistics Survey. 
 <p>
+  It is important to keep in mind that the way library materials expenditures are reported in FOLIO may be different from how they were reported in your previous system. Understanding the new data model will be key in getting the desired results. 
+ <p>
 These queries are intended to include the most common FOLIO fields used; reporters will likely need to add and remove fields to suit their local needs, and may need to write additional queries.  Where possible, they allow you to type text into “parameter filters” to help get the needed breakouts. Each institution’s reporters need to know how their institution tracks the metadata need to get the requested breakouts.  
-
+<p>
 <details>
   <summary markdown="span">Click here to read more!</summary>  
   <br>
 <p>
- Most expenditures tracked in library management systems are for materials or materials-related services.  However, some institutions might report some expenditures tracked in the FOLIO Inventory in ACRL’s “Operations and Maintenance Expenses.”  Likewise, what institutions choose to include in ACRL’s “all other materials/services” may also vary.  So, each reporter will need to know how expenditures are handled at their institution. 
+ Most expenditures tracked in library management systems are for materials or materials-related services.  However, some institutions might report some expenditures that are tracked in the FOLIO Inventory, in ACRL’s “Operations and Maintenance Expenses.”  Likewise, what institutions choose to include in ACRL’s “all other materials/services” may also vary.  So, each reporter will need to know how expenditures are handled at their institution. 
  <p>
-  In FOLIO, only payments made at the Invoice Line level can be assigned a bibliographic format and order type through their corresponding purchase order lines.  However, FOLIO allows institutions to also make payment adjustments at the Invoice level.  For example, some may pay for shipping costs only at the Invoice level.  This report is broken into three parts to help address these differences.  Part C provides data for invoice adjustments made directly at the Invoice level that are ‘Not prorated’ and are ‘In addition to’ the Invoice Lines total.  Part B provides payments made at the Invoice Line level, excluding any adjustments made directly at the Invoice level that are not prorated.  Part A provides a total of both, prorating any ‘un-prorated’ Invoice adjustment amount and distributing it to each Invoice Line based on the ratio of each Invoice Line amount in relation to the Invoice Lines total amount, per invoice. If an institution wants to break out service costs to be reported in “all other materials/services” or in “operations and maintenance expenses” (e.g., ill costs, shipping of binding), and it tracks those expenses by fund (either at the invoice or the PO line level), the institution will need to build and run a separate query to isolate those costs, and remove them from the appropriate totals.
+  In FOLIO, only payments made at the Invoice Line level can be assigned a bibliographic format and order type through their corresponding purchase order lines.  However, FOLIO allows institutions to also make payments/adjustments at the Invoice level. For example, some may pay for shipping costs only at the Invoice level.  This report is broken into three parts to help address these differences.  Part C provides data for Invoice transactions/adjustments made directly at the Invoice level that are ‘Not prorated’, and therefore not distributed to the Invoice Lines total.  Part B provides payments made at the Invoice Line level, excluding any transactions/adjustments made directly at the Invoice level that are not prorated.  Part A provides a total of both, prorating any ‘un-prorated’ Invoice transactions/adjustments amount and distributing it to each Invoice Line based on the ratio of each Invoice Line amount in relation to the Invoice Lines total amount, per invoice. If an institution wants to break out service costs to be reported in “all other materials/services” or in “operations and maintenance expenses” (e.g., ill costs, shipping, or binding), and it tracks those expenses by fund (either at the invoice or the PO line level), the institution will need to build and run a separate query to isolate those costs, and remove them from the appropriate totals.
+  <p>
+  Please note that these queries make use of the Finance Transactions table to get the exact amounts spent.  This is because, in FOLIO, an invoice can be approved in a foreign currency, but the Finance Transactions table is the only place where the exchange rate calculations are presented (calculated without causing rounding problems). Exchange rate information can also be found in the Invoice Invoices table, but at this time, it should not be used to get exact totals since it carries only two digits. 
  <p> 
 <ins>ACRL Collection Expenditures A:</ins>
 <p>
-This query reports on all FOLIO inventory expenditures, including un-prorated adjustments made at the Invoice level.  Expenditures are broken down by Invoice Lines. The needed totals will be calculated by exporting your results to Excel or by using any other reporting tools of your choice, like Tableau. Adjustments at the Invoice level that are "Prorated" are applied to Invoice Lines by the system. The prorate field specifies how the adjustment should be distributed.
+This query reports on all FOLIO inventory expenditures, including un-prorated transactions/adjustments made at the Invoice level.  Expenditures are broken down by Invoice Lines.   The needed totals can be calculated by exporting your results to Excel or by using any other reporting tools of your choice, like Tableau. Transactions at the Invoice level that are "Prorated" are applied automatically to the Invoice Lines by the system. The prorate field specifies how the adjustment should be distributed.
+The Invoice transactions/adjustments that are "Not prorated" and “in addition to” are not distributed to the Invoice Lines. In this case, the query adds the Invoice transactions/adjustments to each Invoice Line based on its ratio in relation to the Invoice Lines total amount. (See above)
  <P>
- The Invoice adjustments that are "Not prorated" and "In addition to" are in addition to the Invoice Lines total. In this case, the Invoice adjustment is added to each Invoice Lines based on its ratio in relation to the Invoice Lines total amount. (See above)
-  <p>
- For example, if an invoice adjustment is for shipping and is ‘Not Prorated’ and is ‘In addition to’, the cost will be distributed to each Invoice Line according to the ratio calculated. Therefore, the amount included in the report will include the amount for shipping. If your institution is recording shipping separately as an invoice adjustment and you do not want to include this invoice adjustment to your PO costs, then the option would be to record the adjustment as ‘Not prorated’ and ‘In addition to’ and use the ACRL Collection Expenditures B and the ACRL Collection Expenditures C jointly to get the totals need.   
+  For example, in this query, if an invoice adjustment is for shipping, is “Not Prorated”, and is “In addition to”, the cost will be distributed to each Invoice Line according to the ratio  calculated by the query. Therefore, the amount included in the report will include the amount for shipping. If your institution is recording shipping separately as an invoice adjustment and you do not want to include this invoice adjustment to your PO costs, then the option would be to record the adjustment as ‘Not prorated’ and use the ACRL Collection Expenditures B and the ACRL Collection Expenditures C jointly to get the total needed. 
 <br>
 <p>
 <ins>ACRL Collection Expenditures B:</ins>
-This query provides a total amount of material expenditures, broken down by Invoice Lines. The overall total will be calculated by adding all Invoice Lines together. The needed totals will be calculated by exporting your results to Excel or by using any other reporting tools of your choice, like Tableau.  Please note that it does not include any adjustments made at the Invoice level coded as “Not prorated” and “In addition to”. If one wants to get the total of Invoice Lines plus the total of all invoice adjustments, then the ACRL Collection Expenditures B should be run jointly with ACRL Collection Expenditures C.  
+This query will return all transactions made at the Invoice Level that have not been distributed to any Invoice Line.   The needed totals will be calculated by exporting your results to excel or by using any other reporting tools of your choice, like Tableau.  As mentioned earlier, the ACRL Collection Expenditure B can be used in conjunction with the ACRL Collection Expenditures C to provide total material expenditures. 
 <br>
 <p>
  <ins>ACRL Collection Expenditures C:</ins>
-This query will return all adjustments added at the Invoice Level that are and coded as “Not prorated,” and the relation to total is “In addition to”. The needed totals will be calculated by exporting your results to excel or by using any other reporting tools of your choice, like Tableau.  As mentioned earlier, the ACRL Collection Expenditure B can be used in conjunction with the ACRL Collection Expenditures C to provide the total amount of material spent but keeping the invoice adjustments that are ‘Not prorated’ and ‘In addition to’ separate from the Invoice Lines total, meaning not added to the overall PO cost.
+This query will return all transactions made at the Invoice Level that have not been distributed to any Invoice Line.   The needed totals will be calculated by exporting your results to excel or by using any other reporting tools of your choice, like Tableau.  As mentioned earlier, the ACRL Collection Expenditure B can be used in conjunction with the ACRL Collection Expenditures C to provide total material expenditures; 
  <br>
  <h4>Relevant LDP/FOLIO documentation:</h4> 
  
@@ -73,10 +77,10 @@ This query will return all adjustments added at the Invoice Level that are and c
 | Material/Services expenses  | Additional information |
 | ------------- | ------------- |
 | One-time purchase of books, serial backfiles, and other materials  | Include: onetime purchases of books, serials, and all other materials (electronic or 	physical, including locally held e-resources), purchased on a one-time basis.<br>Exclude: expenses for computer software used to support library operations or to link to external networks, and anything purchased on a subscription basis.
-| E-books (20a)<br> (if available)<br> (subset of above): | Include:  expenditures for any e-books purchased on a one-time basis, including e-books purchases triggered through a PDA or DDA program. <br>Exclude: ongoing subscriptions to e-book packages; and deposit account money that hasn’t been expended yet.|
+| E-books (20a)<br> (if available)<br> (subset of above): | Include:  expenditures for any e-books purchased on a one-time basis, including e-books purchases triggered through a PDA or DDA program. <br>Exclude: ongoing subscriptions to e-book packages; and deposit account money that hasn’t been expended yet.<br>Note: some vendor packages mix formats. If your library has such packages, you may want to indicate this measure is unavailable, or note that the count only includes those sold separately. |
 | Ongoing commitments to subscriptions:  | Include: expenses for ongoing commitments for all formats, including serials and any other items committed to annually, including annual electronic platform or access 	fees. Expenditures for standing orders if possible.  |
-| E-books (21a)<br> (if available)<br>(subset of above):| Include: ongoing subscriptions to ebook packages; include annual fees for e-book 	platforms  |
-| E-journals 21b <br> (if available)<br>(subset of above)::  | Include: expenses for e-journals purchased in an ongoing basis   | 
+| E-books (21a)<br> (if available)<br>(subset of above):| Include: ongoing subscriptions to ebook packages; include annual fees for e-book 	platforms. <br> Note: some vendor packages mix formats. If your library has such packages, you may want to indicate this measure is unavailable, or note that the count only includes those sold separately.|
+| E-journals 21b <br> (if available)<br>(subset of above)::  | Include: expenses for e-journals purchased in an ongoing basis. See note above.  | 
 | All other material/services cost  | ACRL is not fully prescriptive about what should be included in the category “all other materials/services expenditures”; it only indicates what these expenditures “may” include.  This is possibly because it may not be easy for members to break out these costs.  It may also be because some institutions do not consider the expenditures ACRL recommends as materials expenditures, but as other operating expenditures; and following local procedures, institutions may need or want to include them as other operating expenditures.  ACRL suggests that “all other materials/services” might include, e.g.: document delivery/interlibrary loan services; pay-per-view journal articles costs unless added to your collection; fees expended for short-term loans as part of a DDA or PDA programs; copyright fees and fees for database searches; and costs for bibliographic management systems (e.g., RefWorks).  See the ACRL documentation for more info.  Each institution will need to decide what is correct for them.  It is suggested data notes are provided if local practices differ. 
 
 Note that the ACRL survey is aligned with the NCES Academic Library survey, so these measures can also be used for that survey.
@@ -129,12 +133,17 @@ Each institution’s reporters will need to know how to best get the needed brea
 * Invoice Line status
 * Invoice Line ID
 * Invoice approval date
+* Invoice payment date
 * Invoice Line adjustments description
 * Invoice adjustments total
 * Invoice Line value
-* Invoice Line total
-* Invoice Line Total including invoice adjustments
- *Payment Date* not developed yet, will need to add to this query 
+* Invoice exchange rate
+* Invoice currency
+* Transaction type
+* Transaction invoice adjustment converted
+* Transaction amount per Invoice Line converted
+* Total paid converted
+
 <p> 
  <details>
   <summary markdown="span">Click here to read more!</summary>  
@@ -157,24 +166,31 @@ Each institution’s reporters will need to know how to best get the needed brea
 * Invoice Line status
 * Invoice Line ID
 * Invoice approval date
+* Invoice payment date 
+* Invoice Line sub-total
+* Invoice Line adjustments value
 * Invoice Line adjustments description
-* Invoice adjustments total
- *Payment Date* not developed yet, will need to add to this query  
+* Invoice Line value
+* Invoice exchange rate
+* Invoice currency
+* Transaction type
+* Transaction amount per Invoice Line converted
+
  
  <ins>ACRL Collection Expenditures C:</ins>
 <br>
 Aggregation:
  
-* Invoice ID
-* Invoice adjustment prorate (not prorated)
-* Invoice adjustment relation to totl (In addition to)
-* Invoice adjustment description
-* Invoice adjustments total amount
-* Invoice Line value
-* Invoice Line total
-* Invoice Line Total including invoice adjustments
- *Payment Date* not developed yet, will need to add to this query 
- 
+* Transaction ID
+* Invoice approval date
+* Invoice payment date
+* Transaction source invoice ID
+* Fiscal year code
+* Transaction source Invoice Line ID
+* Transaction amount
+* Transaction currency
+* Transaction type
+
  </details>
 
 ## Requests not yet adressed <a name="requests"></a>
@@ -182,11 +198,6 @@ Aggregation:
  <ins>ACRL Collection expenditures report by location:</ins>
  <br>
 At this time, the location data is only available through the PO lines at the time of its creation and the total amount of the PO lines may very well be $0; therefore using this location data would not return accurate results. A link from the PO lines to Holdings is currently in development, UXPROD-268. An additional report may be created once the issue is resolved and data is available.
-<p>
- <ins>Payment date:</ins>
- <br>
-The invoice ‘payment date’ is currently in development. This element should be added to the queries as soon as it becomes available. https://issues.folio.org/plugins/servlet/mobile#issue/UXPROD-2169
-
 <p>
  <ins>Future Custom Fields:</ins>
  <br>
