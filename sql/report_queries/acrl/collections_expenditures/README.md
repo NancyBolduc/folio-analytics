@@ -12,7 +12,7 @@ Table of Contents
 
 
 ## Status <a name="status"></a>
-The ACRL Collection Expenditures comprises three different queries -- ACRL Collection Expenditures A, B & C. The different use for each query is described in this document under ‘Purpose’. As of 03/03/2021, these queries are in development. 
+The ACRL Collection Expenditures comprises three different queries -- ACRL Collection Expenditures A, B & C. The different use for each query is described in this document under ‘Purpose’. As of 03/19/2021, these queries are in testing status. 
 <p>
  
 ## Purpose <a name="purpose"></a>
